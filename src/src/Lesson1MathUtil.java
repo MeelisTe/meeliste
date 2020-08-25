@@ -1,14 +1,52 @@
 import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Lesson1MathUtil {
 
     public static void main(String[] args) {
-        System.out.println(min(1, 5));
-        System.out.println(max(2, 6));
-        System.out.println(abs(-4));
-        System.out.println(isEven(6));
-        System.out.println(min(3, 5, -5));
-        System.out.println(max(4, 6, -5));
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please enter a function: min2, max2, abs, isEven, min3, max3");
+
+        String test = scanner.nextLine();
+
+
+        if(test.equalsIgnoreCase("min2")) {
+            System.out.println("Please enter 2 numbers");
+                int a = scanner.nextInt();
+                int b = scanner.nextInt();
+                    System.out.println(min(a, b));
+        } else if (test.equalsIgnoreCase("max2")){
+            System.out.println("Please enter 2 numbers");
+                int a = scanner.nextInt();
+                int b = scanner.nextInt();
+                    System.out.println(max(a, b));
+        } else if (test.equalsIgnoreCase("abs")){
+            System.out.println("Please enter a number");
+                int a = scanner.nextInt();
+                    System.out.println(abs(a));
+        } else if (test.equalsIgnoreCase("isEven")){
+            System.out.println("Please enter a number");
+                int a = scanner.nextInt();
+                    System.out.println(isEven(a));
+        } else if (test.equalsIgnoreCase("min3")){
+            System.out.println("Please enter 3 numbers");
+                int a = scanner.nextInt();
+                int b = scanner.nextInt();
+                int c = scanner.nextInt();
+                    System.out.println(min(a, b, c));
+        } else if (test.equalsIgnoreCase("max3")){
+            System.out.println("Please enter 3 numbers");
+                int a = scanner.nextInt();
+                int b = scanner.nextInt();
+                int c = scanner.nextInt();
+                    System.out.println(max(a, b, c));
+        } else {
+            System.out.println("Wrong input, please try again");;
+
+        }
+
+
     }
 
     public static int min(int a, int b) {
