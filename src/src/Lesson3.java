@@ -46,9 +46,14 @@ public class Lesson3 {
             System.out.println("Sisesta sõna");
             String str = scanner.nextLine();
 
-            System.out.println("Sisesta sõna: " + str);
+            System.out.println("Sisestatud sõna: " + str);
 
             System.out.println("Sisestatud sõna " + str + " tagurpidi on: " + reverseString(str));
+        } else if (funktsioon.equalsIgnoreCase("isPrime")) {
+            System.out.println("Sisesta arv");
+            int x = scanner.nextInt();
+
+            System.out.println(isPrime(x));
         }
     }
 
@@ -121,7 +126,16 @@ public class Lesson3 {
 
     public static boolean isPrime(int x) {
         // TODO tagasta kas sisestatud arv on primaar arv (jagub ainult 1 ja iseendaga)
-        return false;
-    }
+        for (int i = 2; i < x; i++) {
+            if (x % i == 0 && i != x) {
+                return false;
+            }
+        } return true;
 
+    }
 }
+
+
+
+
+
