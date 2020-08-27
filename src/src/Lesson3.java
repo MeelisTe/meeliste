@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Lesson3 {
@@ -39,7 +40,7 @@ public class Lesson3 {
                 array[i] = scanner.nextInt();
             }
 
-            System.out.println("Massiiv suuruse järgi: " + a);
+            System.out.println("Massiiv suuruse järgi: " + (Arrays.toString(sort(array))));
         }
     }
 
@@ -71,25 +72,24 @@ public class Lesson3 {
         return factorial;
     }
 
-    public static int sort(int[] a) {
+    public static int[] sort(int[] a) {
         // TODO sorteeri massiiv suuruse järgi
         // Näiteks {2, 6, 8, 1}
         // Väljund {1, 2, 6, 8}
-        int minNumberValue = a[0];
-        int minIndex = 0;
 
 
         for (int i = 0; i < a.length; i++) {
-            if (a[i] < minNumberValue) {
+            for (int j = i; j < a.length; j++) {
+                if (a[i] > a[j]) {
 
-                minNumberValue = a[i];
+                    int temp = a[j];
+                    a[j] = a[i];
+                    a[i] = temp;
 
-                minIndex = i;
-            } for (int j = 0; j < ; j++){
-
+                }
             }
         }
-        return minNumberValue;
+        return a;
     }
 
     public static String reverseString(String a) {
