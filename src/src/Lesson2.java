@@ -7,8 +7,9 @@ public class Lesson2 {
         //     exercise1();
         //     exercise2(4);
         //     exercise3(2, 5);
-        fibonacci(5);
+        //     fibonacci(5);
         exercise5();
+
     }
 
     public static void exercise1() {
@@ -39,7 +40,7 @@ public class Lesson2 {
         System.out.println("Mitu paarisarvu soovid printida?");
         int a = scanner.nextInt();
         for (int i = 1; i <= a; i++) {
-            System.out.println(i*2);
+            System.out.println(i * 2);
         }
     }
 
@@ -52,10 +53,10 @@ public class Lesson2 {
         x = scanner.nextInt();
         y = scanner.nextInt();
 
-        for (int i = 1; i <= y; i++)
-        {  System.out.println(" ");
+        for (int i = 1; i <= y; i++) {
+            System.out.println(" ");
             for (int j = 1; j <= x; j++) // Alustab sellest for tsüklist(for tsükkel for tsükli sees)
-                System.out.print(j*i + "\t");
+                System.out.print(j * i + "\t");
             // \t - tab
         }
     }
@@ -84,15 +85,13 @@ public class Lesson2 {
         int result;
 
         System.out.println("Fibonacci jada on ");
-        for(int i=0;i<n;i++)
-        {
-            if(i<=1)
-                result=i;
-            else
-            {
-                result=fib0+fib1;
-                fib0=fib1;
-                fib1=result;
+        for (int i = 0; i < n; i++) {
+            if (i <= 1)
+                result = i;
+            else {
+                result = fib0 + fib1;
+                fib0 = fib1;
+                fib1 = result;
             }
             System.out.println(result);
         }
@@ -118,6 +117,31 @@ public class Lesson2 {
 
     public static void exercise5() {
         // https://onlinejudge.org/index.php?option=onlinejudge&Itemid=8&page=show_problem&problem=36
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Sisesta 2 arvu: ");
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        System.out.println("Sisestasid: " + x + " ja " + y);
+
+        int maxpikkus = 0; // maksimaalne jada pikkus
+
+        for (int i = x; i <= y; i++) {
+            int pikkus = 1; // jada pikkus 1-ni jõudmiseks
+            int i1 = i; // Võrdsustame i1 väärtuse i-ga ehk number mida vaatleme
+
+            while (i1 > 1) {
+
+                if (i1 % 2 == 0) {
+                    i1 = i1 / 2;
+                } else {
+                    i1 = 3 * i1 + 1;
+                }
+                pikkus++;
+            }
+            maxpikkus = pikkus;
+
+        }
+        System.out.println(x + " " + y + " " + maxpikkus);
     }
 
     public static void exercise6() {
