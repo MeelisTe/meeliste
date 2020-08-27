@@ -41,6 +41,14 @@ public class Lesson3 {
             }
 
             System.out.println("Massiiv suuruse järgi: " + (Arrays.toString(sort(array))));
+
+        } else if (funktsioon.equalsIgnoreCase("reverseString")) {
+            System.out.println("Sisesta sõna");
+            String str = scanner.nextLine();
+
+            System.out.println("Sisesta sõna: " + str);
+
+            System.out.println("Sisestatud sõna " + str + " tagurpidi on: " + reverseString(str));
         }
     }
 
@@ -94,10 +102,21 @@ public class Lesson3 {
 
     public static String reverseString(String a) {
         // TODO tagasta string tagurpidi
+        char[] in = a.toCharArray();
+        int begin = 0;
+        int end = in.length - 1;
+        char temp;
+        while (end > begin) {
+            temp = in[begin];
+            in[begin] = in[end];
+            in[end] = temp;
+            end--;
+            begin++;
+        }
         // Näiteks:
         // a = "Test";
         // return tseT";
-        return "";
+        return new String(in);
     }
 
     public static boolean isPrime(int x) {
