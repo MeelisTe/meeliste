@@ -124,12 +124,13 @@ public class Lesson2 {
         System.out.println("Sisestasid: " + x + " ja " + y);
 
         int maxpikkus = 0; // maksimaalne jada pikkus
+        int maxpikkusfinal = 0;
 
         for (int i = x; i <= y; i++) {
             int pikkus = 1; // jada pikkus 1-ni jõudmiseks
             int i1 = i; // Võrdsustame i1 väärtuse i-ga ehk number mida vaatleme
 
-            while (i1 > 1) {
+            while (i1 != 1) {
 
                 if (i1 % 2 == 0) {
                     i1 = i1 / 2;
@@ -138,8 +139,10 @@ public class Lesson2 {
                 }
                 pikkus++;
             }
-            maxpikkus = pikkus;
 
+            if (maxpikkus < pikkus) { // Võrdleb hetkel olevat maksimumpikkust leitud pikkusega
+                maxpikkus = pikkus; // Võrdsustab maksimumpikkuse antud while loop pikkusega
+            }
         }
         System.out.println(x + " " + y + " " + maxpikkus);
     }
